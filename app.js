@@ -17,21 +17,21 @@ let knownCount = 0;
 let homeSlogan = [];
 
 // set event listeners 
-building.addEventListener('click', () => {
+building.addEventListener('change', () => {
     console.log('changing select', building.value);
     architectureCount++;
     buildingEl.style.backgroundImage = `url('./assets/${building.value}.jpeg')`;
     displayStats();
 });
 
-nature.addEventListener('click', () => {
+nature.addEventListener('change', () => {
     console.log('changing select', nature.value);
     climateCount++;
     climateEl.style.backgroundImage = `url('./assets/${nature.value}.jpeg')`;
     displayStats();
 });
 
-known.addEventListener('click', () => {
+known.addEventListener('change', () => {
     console.log('changing select', known.value);
     knownCount++;
     knownEl.style.backgroundImage = `url('./assets/${known.value}.jpeg')`;
