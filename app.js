@@ -6,6 +6,8 @@ const buildingEl = document.getElementById('building');
 const climateEl = document.getElementById('climate');
 const knownEl = document.getElementById('known');
 const reportEl = document.getElementById('report');
+const sloganInput = document.getElementById('city-slogan-input');
+const sloganButton = document.getElementById('city-slogan-button');
 
 // let state
 let architectureCount = 0;
@@ -36,9 +38,20 @@ known.addEventListener('click', () => {
     displayStats();
 });
 
+sloganButton.addEventListener('click', () => {
+    console.log('clicking add', sloganInput.value);
+    homeSlogan.push(sloganInput.value);
+    displayHomeSlogan();
+});
+
 function displayStats() {
     reportEl.textContent = `You have changed the architecture ${architectureCount} times, the climate ${climateCount} times and what your town is known for ${knownCount} times. And don't forget your homes classic catchphrases: `;
+};
+
+function displayHomeSlogan() {
+  
 }
+
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
