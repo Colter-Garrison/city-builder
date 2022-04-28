@@ -46,12 +46,15 @@ sloganButton.addEventListener('click', () => {
 
 function displayStats() {
     reportEl.textContent = `You have changed the architecture ${architectureCount} times, the climate ${climateCount} times and what your town is known for ${knownCount} times. And don't forget your homes classic catchphrases: `;
-};
-
-function displayHomeSlogan() {
-  
 }
 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+function displayHomeSlogan() {
+    const homeSloganList = document.getElementById('slogan-report');
+    homeSloganList.textContent = ' ';
+
+    for (let phrase of homeSlogan) {
+        const thePhrase = document.createElement('div');
+        thePhrase.textContent = phrase;
+        homeSloganList.append(thePhrase);
+    }
+}
