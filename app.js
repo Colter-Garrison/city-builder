@@ -1,8 +1,41 @@
 // import functions and grab DOM elements
+const building = document.getElementById('building-dropdown');
+const nature = document.getElementById('nature-dropdown');
+const known = document.getElementById('known-dropdown');
+const buildingEl = document.getElementById('building');
+const climateEl = document.getElementById('climate');
+const knownEl = document.getElementById('known');
+const reportEl = document.getElementById('report');
 
 // let state
+let architectureCount = 0;
+let climateCount = 0;
+let knownCount = 0;
+
+let homeSlogan = [];
 
 // set event listeners 
+building.addEventListener('click', () => {
+    console.log('changing select', building.value);
+    architectureCount++;
+    buildingEl.style.backgroundImage = `url('./assets/${building.value}.jpeg')`;
+    displayStats();
+});
+
+nature.addEventListener('click', () => {
+    console.log('changing select', nature.value);
+    climateCount++;
+    climateEl.style.backgroundImage = `url('./assets/${nature.value}.jpeg')`;
+    displayStats();
+});
+
+known.addEventListener('click', () => {
+    console.log('changing select', known.value);
+    knownCount++;
+    knownEl.style.backgroundImage = `url('./assets/${known.value}.jpg')`;
+    displayStats();
+});
+
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
